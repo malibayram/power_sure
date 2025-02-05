@@ -19,7 +19,8 @@ class _LoginPageState extends State<LoginPage> {
   bool _isLoading = false;
   bool _obscurePassword = true;
   final _googleSignIn = GoogleSignIn(
-    clientId: 'YOUR-NEW-CLIENT-ID.apps.googleusercontent.com',
+    clientId:
+        '907412954714-rnvb3g8c3sblv0a8ujmfhbuvfnapprnv.apps.googleusercontent.com',
   );
 
   @override

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -27,12 +28,33 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <title>power_sure</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- Add this meta tag -->
+  <meta name="google-signin-client_id" content="YOUR-NEW-CLIENT-ID.apps.googleusercontent.com">
 </head>
+
 <body>
   <script src="flutter_bootstrap.js" async></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDaGF57PbmUUq_3d5XsYKNJGG1QEw9qSm4",
+      authDomain: "power-sure.firebaseapp.com",
+      projectId: "power-sure",
+      storageBucket: "power-sure.firebasestorage.app",
+      messagingSenderId: "907412954714",
+      appId: "1:907412954714:web:3741ab1765aebbf7c18263"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 </body>
+
 </html>

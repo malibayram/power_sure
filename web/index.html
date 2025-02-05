@@ -33,17 +33,21 @@
   <title>power_sure</title>
   <link rel="manifest" href="manifest.json">
 
-  <!-- Add this meta tag -->
+  <!-- Update Google Sign In meta tag with the new client ID -->
   <meta name="google-signin-client_id"
-    content="907412954714-rnvb3g8c3sblv0a8ujmfhbuvfnapprnv.apps.googleusercontent.com">
+    content="907412954714-s0qvbtucpln8f7j8ot1dacfdr4n0nvh6.apps.googleusercontent.com">
+
+  <!-- Add this before your other scripts -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body>
-  <script src="flutter_bootstrap.js" async></script>
-  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
+  <!-- Move this script before flutter_bootstrap.js -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
 
   <script>
+    // Your web app's Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyDaGF57PbmUUq_3d5XsYKNJGG1QEw9qSm4",
       authDomain: "power-sure.firebaseapp.com",
@@ -56,6 +60,8 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
   </script>
+
+  <script src="flutter_bootstrap.js" async></script>
 </body>
 
 </html>

@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -19,8 +20,13 @@ class _LoginPageState extends State<LoginPage> {
   bool _isLoading = false;
   bool _obscurePassword = true;
   final _googleSignIn = GoogleSignIn(
-    clientId:
-        '907412954714-rnvb3g8c3sblv0a8ujmfhbuvfnapprnv.apps.googleusercontent.com',
+    clientId: kIsWeb
+        ? '907412954714-s0qvbtucpln8f7j8ot1dacfdr4n0nvh6.apps.googleusercontent.com'
+        : null,
+    scopes: [
+      'email',
+      'https://www.googleapis.com/auth/userinfo.profile',
+    ],
   );
 
   @override
@@ -81,21 +87,17 @@ class _LoginPageState extends State<LoginPage> {
     });
 
     try {
-      // Use _googleSignIn instead of GoogleSignIn()
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
       if (googleUser == null) return;
 
-      // Obtain auth details from request
       final GoogleSignInAuthentication googleAuth =
           await googleUser.authentication;
 
-      // Create a new credential
       final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
 
-      // Sign in with credential
       await FirebaseAuth.instance.signInWithCredential(credential);
 
       if (mounted) {
@@ -105,7 +107,7 @@ class _LoginPageState extends State<LoginPage> {
         );
       }
     } catch (e) {
-      print(e);
+      print('Error signing in with Google: $e');
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(

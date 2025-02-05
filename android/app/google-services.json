@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "907412954714",
+    "project_id": "power-sure",
+    "storage_bucket": "power-sure.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907412954714:android:f36b1116d9febebbc18263",
+        "android_client_info": {
+          "package_name": "com.example.power_sure"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7aYr-EePoMcRG-0VO4KAkb6JWw5K6LNI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

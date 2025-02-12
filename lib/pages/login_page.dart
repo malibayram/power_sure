@@ -6,6 +6,30 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'home_page.dart';
 import 'signup_page.dart';
 
+/* 
+JSON => JavaScript Object Notation
+
+{
+  "adi": "Kitap Adı",
+  "yazari": "Yazıcı Adı",
+  "resimUrl": "https://resim.com/kitap.jpg",
+  "ozet": "Kitap Özeti",
+  "konusu": "Kitap Konusu",
+  "yayinTarihi": "2024-01-01",
+  "sayfaSayisi": 100
+}
+ */
+
+/* class Kitap {
+  final String adi;
+  final String yazari;
+  final String resimUrl;
+  final String ozet;
+  final String konusu;
+  final String yayinTarihi;
+  final String sayfaSayisi;
+} */
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
